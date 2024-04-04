@@ -1,33 +1,10 @@
 # Visualize Event dataset with Humboldt Extension as a Network
 # https://r-graph-gallery.com/249-igraph-network-map-a-color.html
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# How to:
-
-# # 1. Install packages if needed:
-# install.packages(c("collapsibleTree",
-#                    "igraph", "readr", "RColorBrewer",
-#                    "data.table", "data.tree", "ggraph"))
-#
-# # 2. Copy your input-CSV to the "data_input" folder
-#
-# # 3. Name the input-CSV "FM_Humboldt_data.csv"
-#       [Or update file-path in "read_csv(...)" on line ~25]
-#
-# # 4. Run this script -- e.g.:
-#       - highlight lines & press Ctrl+Enter
-#       - &/or in the 'Console' window (lower-left), type:
-#           source('humboldtTree.R')
-#
-# # # # # # # # # # # # # # # # # # # # # # # # # # # #
-
 library(collapsibleTree)
 library(readr)
 library(igraph)
 library(RColorBrewer)
-# library(data.table)
-# library(data.tree)
-# library(ggraph)
 
 
 # Import data
@@ -63,17 +40,16 @@ network <- graph_from_data_frame(d=humboldt, vertices=nodes, directed=F)
 # Make a palette of 3 colors
 coul  <- brewer.pal(3, "Set1") 
 
-# Create a vector of color
+# Adjust graph-attributes
 my_color <- coul[as.numeric(as.factor(V(network)$carac))]
-
 V(network)$label.cex <- .8
 E(network)$width <- 2.2
-# E(network)$connect <- 15
 
 # Make the plot
 plot(network, 
      vertex.color=my_color, 
      vertex.size = 6)
+
 
 # # Add a legend
 # legend("bottomleft", legend=levels(as.factor(V(network)$carac)),
