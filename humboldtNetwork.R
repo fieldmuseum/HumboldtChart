@@ -58,7 +58,7 @@ nodes <- unique(
 names(nodes) <- c('name', 'carac')
 
 # Turn it into igraph object
-network <- graph_from_data_frame(d=humboldt, vertices=nodes, directed=T) 
+network <- graph_from_data_frame(d=humboldt, vertices=nodes, directed=F) 
 
 # Make a palette of 3 colors
 coul  <- brewer.pal(3, "Set1") 
@@ -66,16 +66,25 @@ coul  <- brewer.pal(3, "Set1")
 # Create a vector of color
 my_color <- coul[as.numeric(as.factor(V(network)$carac))]
 
+V(network)$label.cex <- .8
+E(network)$width <- 2.2
+# E(network)$connect <- 15
+
 # Make the plot
-plot(network, vertex.color=my_color)
+plot(network, 
+     vertex.color=my_color, 
+     vertex.size = 6)
 
-# Add a legend
-legend("bottomleft", legend=levels(as.factor(V(network)$carac))  , col = coul , bty = "n", pch=20 , pt.cex = 3, cex = 1.5, text.col=coul , horiz = FALSE, inset = c(0.025, 0.125))
-
-# Make rough network-graph
-edges <- igraph::graph_from_edgelist(
-  as.matrix(
-    humboldt[2:NROW(humboldt),1:2]), 
-  directed = T)
-
-plot(edges)
+# # Add a legend
+# legend("bottomleft", legend=levels(as.factor(V(network)$carac)),
+#        col = coul , bty = "n", pch=20 , 
+#        pt.cex = 1.75, cex = 1.5, text.col=coul , horiz = FALSE, 
+#        inset = c(0.01, 0.01))
+# 
+# # Make rough network-graph
+# edges <- igraph::graph_from_edgelist(
+#   as.matrix(
+#     humboldt[2:NROW(humboldt),1:2]), 
+#   directed = T)
+# 
+# plot(edges)
