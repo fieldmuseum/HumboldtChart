@@ -7,6 +7,7 @@
 
 1. **Install packages** if needed:
 ```r
+# Paste and run this in the RStudio console (lower-left panel)
 install.packages(c("collapsibleTree",
                    "igraph", "readr", "RColorBrewer",
                    "data.table", "data.tree", "ggraph"))
