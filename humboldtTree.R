@@ -1,4 +1,4 @@
-# Visualize Event dataset with Humboldt Extension as a Tree
+# Visualize Event dataset with hc_event Extension as a Tree
 # https://r-graph-gallery.com/dendrogram.html
 
 library(collapsibleTree)
@@ -8,25 +8,27 @@ library(RColorBrewer)
 
 
 # Import data
-humboldt <- read_csv("data_input/FM_Humboldt_data.csv")
+# hc_event <- read_csv("data_input/FM_hc_event_data.csv")  # local copy
+input_data <- "https://raw.githubusercontent.com/fieldmuseum/HumboldtChart/main/data_input/FM_Humboldt_data.csv"
+hc_event <- read_csv(input_data)
 
 # Insert root-row
-humb_root <- data.frame(
+hc_root <- data.frame(
   eventID = NA,
-  parentEventID = humboldt$eventID[1],
+  parentEventID = hc_event$eventID[1],
   siteCount = 0,
   stringsAsFactors = F
 )
 
-humboldt <- plyr::rbind.fill(humb_root, humboldt)
+hc_event <- plyr::rbind.fill(hc_root, hc_event)
 
 # Assign color by site Count
-humboldt$Color <- as.factor(humboldt$siteCount)
-levels(humboldt$Color) <- colorspace::rainbow_hcl(11)
+hc_event$Color <- as.factor(hc_event$siteCount)
+levels(hc_event$Color) <- colorspace::rainbow_hcl(11)
 
 # Generate a tree-graph
 collapsibleTreeNetwork(
-  humboldt,
+  hc_event,
   attribute = "siteCount",
   fill = "Color",
   nodeSize = "leafCount"
