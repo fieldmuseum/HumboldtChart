@@ -17,7 +17,7 @@ install.packages(c("collapsibleTree",
 
 3. Name the input-CSV **"FM_Humboldt_data.csv"**
 
-4. **Run** a charting script, e.g.: `source("humboldtTree.R")`
+4. **Run** a charting script. e.g. in the RStudio console, type: `source("humboldtTree.R")`
 
 
 ## [humboldtTree.R](https://github.com/fieldmuseum/HumboldtChart/blob/main/humboldtTree.R)
