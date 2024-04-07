@@ -1,6 +1,10 @@
 # Humboldt Chart scripts
 ...scripts to visualize [Darwin Core Event core](https://www.gbif.org/darwin-core) datasets with [Humboldt extensions](https://eco.tdwg.org/) as trees, networks, etc.
 
+## Examples:
+
+[Interactive Event-tree chart](https://fmnh.shinyapps.io/event_tree/) from humboldtTree.R 
+
 ## Setup / How-to:
 
 0. Clone or download this repo, and open its 'Rproj' file in RStudio.
@@ -30,3 +34,6 @@ Generates a collapsible tree/dendrogram to illustrate parent-child relationships
 Generates a less organized network for clusters/relationships
 
 <img src="https://github.com/fieldmuseum/HumboldtChart/assets/8563362/7a859cde-30f9-4b79-a9d8-61ba10976692" width="500px"/>
+
+## Resources 
+[Shiny App How-to](https://shiny.posit.co/r/articles/share/shinyapps/)
