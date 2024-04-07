@@ -8,8 +8,7 @@ library(RColorBrewer)
 
 
 # Import data
-input_data <- "https://raw.githubusercontent.com/fieldmuseum/HumboldtChart/main/data_input/FM_Humboldt_data.csv"
-# input_data <- "data_input/FM_Humboldt_data.csv"  # local copy
+input_data <- "data_input/FM_Humboldt_data.csv"
 hc_event <- read_csv(input_data)
 
 # Insert root-row
