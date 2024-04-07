@@ -3,7 +3,7 @@
 
 ## Examples:
 
-[Interactive Event-tree chart](https://fmnh.shinyapps.io/event_tree/) from humboldtTree.R 
+[Interactive Event-tree chart](https://fmnh.shinyapps.io/event_tree/) generated with the [event_tree app](https://github.com/fieldmuseum/HumboldtChart/tree/main/event_tree) which references humboldtTree.R
 
 ## Setup / How-to:
 
@@ -24,7 +24,7 @@ install.packages(c("collapsibleTree",
 4. **Run** a charting script. e.g. in the RStudio console, type: `source("humboldtTree.R")`
 
 
-## [humboldtTree.R](https://github.com/fieldmuseum/HumboldtChart/blob/main/humboldtTree.R)
+## [humboldtTree.R](https://github.com/fieldmuseum/HumboldtChart/blob/main/event_tree/humboldtTree.R)
 Generates a collapsible tree/dendrogram to illustrate parent-child relationships
 
 <img src="https://github.com/fieldmuseum/HumboldtChart/assets/8563362/ea672693-57e0-4cee-9c15-b0f2ab5466ee" width="750px"/>
