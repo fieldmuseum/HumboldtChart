@@ -34,9 +34,10 @@ server <- function(input, output) {
     
     collapsibleTreeNetwork(
       hc_event,
-      attribute = "siteCount",
+      attribute = "nodeType",
       fill = "Color",
-      nodeSize = "leafCount"
+      fontSize = 8,
+      linkLength = 100
     )
   })
 }
