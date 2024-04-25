@@ -37,6 +37,7 @@ server <- function(input, output) {
       attribute = "nodeType",
       fill = "Color",
       fontSize = 8,
+      collapsed = F,
       linkLength = 100
     )
   })

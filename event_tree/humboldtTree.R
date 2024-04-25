@@ -13,22 +13,24 @@ hc_event <- read_csv(input_data)
 
 # Insert root-row
 hc_root <- data.frame(
-  eventID = NA,
-  parentEventID = hc_event$eventID[1],
+  eventID = hc_event$parentEventID[1], # NA,
+  parentEventID = NA, # hc_event$eventID[1],
   nodeType = 'event',
   stringsAsFactors = F
 )
 
 hc_event <- plyr::rbind.fill(hc_root, hc_event)
 
+hc_event <- hc_event[,c("parentEventID","eventID","nodeType")]
+
 # Assign color by site Count
 hc_event$Color <- as.factor(hc_event$nodeType)
 levels(hc_event$Color) <- 
   colorspace::rainbow_hcl(9,
-                          c = 44,
-                          l = 80,
-                          start = 130, 
-                          end = 790)
+                          c = 56,
+                          l = 78,
+                          start = -1100, 
+                          end = 90)
 
 # Generate a tree-graph
 collapsibleTreeNetwork(

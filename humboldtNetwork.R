@@ -8,7 +8,7 @@ library(RColorBrewer)
 
 
 # Import data
-humboldt <- read_csv("data_input/FM_Humboldt_data.csv")
+humboldt <- read_csv("event_tree/data_input/FM_Humboldt_data_2024apr15.csv")
 
 # Insert root-row
 humb_root <- data.frame(
