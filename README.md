@@ -1,5 +1,5 @@
 # Humboldt Chart scripts
-...scripts to visualize [Darwin Core Event core](https://www.gbif.org/darwin-core) datasets with [Humboldt extensions](https://eco.tdwg.org/) as trees, networks, etc.
+...scripts to visualize [Darwin Core Event core](https://www.gbif.org/darwin-core) datasets with [Humboldt extensions](https://eco.tdwg.org/) as trees, networks, etc following examples from the [R Graph Gallery](https://r-graph-gallery.com/336-interactive-dendrogram-with-collapsibletree.html).
 
 ## Examples:
 
@@ -12,7 +12,7 @@
 1. **Install packages** if needed:
 ```r
 # Paste and run this in the RStudio console (lower-left panel)
-install.packages(c("collapsibleTree",
+install.packages(c("collapsibleTree", "shiny",
                    "igraph", "readr", "RColorBrewer",
                    "data.table", "data.tree", "ggraph"))
 ```
@@ -21,8 +21,14 @@ install.packages(c("collapsibleTree",
 
 3. Name the input-CSV **"FM_Humboldt_data.csv"**
 
-4. **Run** a charting script. e.g. in the RStudio console, type: `source("humboldtTree.R")`
+4. **Run** a charting script. e.g. in the RStudio console, type:
+```
+# To see a network-diagram:
+`source("humboldtNetwork.R")`
 
+# To launch the interactive tree-diagram shiny-app:
+`shiny::runApp('event_tree')`
+```
 
 ## [humboldtTree.R](https://github.com/fieldmuseum/HumboldtChart/blob/main/event_tree/humboldtTree.R)
 Generates a collapsible tree/dendrogram to illustrate parent-child relationships
