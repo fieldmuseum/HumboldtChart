@@ -14,7 +14,7 @@ ui <- fluidPage(
     p("For more info, see", tags$b("event_tree"),
     a("scripts", href = "https://github.com/fieldmuseum/HumboldtChart"),
     "and",
-    a("data.", href = "https://github.com/fieldmuseum/HumboldtChart/blob/main/event_tree/data_input/FM_Humboldt_data.csv"))
+    a("data.", href = "https://github.com/fieldmuseum/HumboldtChart/blob/main/event_tree/data_input/FM_Humboldt_data_2024apr.csv"))
   ),
   
   # Show a tree diagram with the selected root node
